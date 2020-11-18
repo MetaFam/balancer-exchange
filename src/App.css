@@ -16,7 +16,7 @@
     /* Input Fields */
     --input-text: #fafafa;
     --input-placeholder-text: #575860;
-    --input-hover-background: #31313b;
+    --input-hover-background: rgba(0, 0, 0, 0.08);
     --input-hover-placeholder-text: #818187;
     --input-hover-border: #4c5480;
 
@@ -32,22 +32,25 @@
 
     /* Panel Styles */
     --panel-border: #41476b;
-    --panel-background: #2e2f39;
+    --panel-background: rgb(27 13 43);
     --panel-hover-border: #4c5480;
-    --panel-hover-background: #31313b;
-    --panel-header-background: #282932;
+    --panel-hover-background: rgba(27 13 43, 0.9);
+    --panel-header-background: rgb(27 13 43);
 
     /* Selector Styles */
-    --highlighted-selector-background: #41476b;
+    --highlighted-selector-background: rgba(0, 0, 0, 0.08);
     --highlighted-selector-border: #7785d5;
     --highlighted-selector-text: #ffffff;
-    --selector-background: #2e2f39;
+    --selector-background: rgba(255, 255, 255, 0.08);
     --selector-border: #41476b;
     --selector-text: #fafafa;
 }
 
 body {
     background: var(--background);
+    background-image: url('./assets/images/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .app-shell {
@@ -64,4 +67,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.web3modal-modal-card,
+.web3modal-provider-container {
+    background-color: var(--panel-background);
+}
+
+.web3modal-modal-wrapper,
+.web3modal-provider-container:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.web3modal-provider-wrapper:hover .web3modal-provider-container {
+    background-color: rgba(0, 0, 0, 0.1) !important;
 }

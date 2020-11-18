@@ -10,6 +10,7 @@ const HeaderFrame = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    background-color: rgb(27, 13, 42);
 `;
 
 const HeaderElement = styled.div`
@@ -87,7 +88,10 @@ const Header = () => {
                 </Title>
             </HeaderElement>
             <HeaderElement>
-                <Link href="https://pools.balancer.exchange" target="_blank">
+                <Link
+                    href="https://beta.pools.balancer.exchange/#/pool/0xea05a15dbce2eb543ffda16950e95b2bd2e40d0e/swaps"
+                    target="_blank"
+                >
                     Add Liquidity
                 </Link>
                 <Wallet />

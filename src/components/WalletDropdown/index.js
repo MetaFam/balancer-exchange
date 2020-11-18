@@ -22,7 +22,7 @@ const Lightbox = styled.div`
     left: 50%;
     z-index: 2;
     will-change: opacity;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
 `;
 
 const Wrapper = styled.div`

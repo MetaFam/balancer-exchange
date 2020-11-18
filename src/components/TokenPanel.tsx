@@ -119,10 +119,8 @@ const InputWrapper = styled.div`
         font-size: 16px;
         font-weight: 500;
         line-height: 19px;
-        background-color: var(--panel-background);
+        background-color: transparent;
         border: none;
-        box-shadow: inset 0 0 0 1px var(--panel-background),
-            inset 0 0 0 100px var(--panel-background);
         :-webkit-autofill,
         :-webkit-autofill:hover,
         :-webkit-autofill:focus,
@@ -150,12 +148,8 @@ const InputWrapper = styled.div`
         margin-left: -1px;
         margin-right: -1px;
         input {
-            background-color: var(--input-hover-background);
-            box-shadow: inset 0 0 0 1px var(--input-hover-background),
-                inset 0 0 0 100px var(--input-hover-background);
             ::placeholder {
                 color: var(--input-hover-placeholder-text);
-                background-color: var(--input-hover-background);
             }
         }
     }
