@@ -1,5 +1,7 @@
 # MetaGame x Balancer Exchange
 
+![MetaGame x Balancer](./metagame-x-balancer.png)
+
 ## Development
 
 -   Environment Config
