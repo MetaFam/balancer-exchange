@@ -16,6 +16,7 @@ import {
     formatBalanceTruncated,
     toChecksum,
 } from '../utils/helpers';
+import { SEED_ADDRESS } from '../utils/constants';
 import { TokenMetadata, EtherKey } from './Token';
 
 export enum SwapMethods {
@@ -113,7 +114,7 @@ export default class SwapFormStore {
 
         this.outputToken = {
             address: '',
-            symbol: '',
+            symbol: 'SEED',
             name: '',
             decimals: 18,
             hasIcon: false,
@@ -139,7 +140,7 @@ export default class SwapFormStore {
     }
 
     private loadDefaultOutputToken() {
-        const localOutputTokenAddr = localStorage.getItem('outputToken');
+        const localOutputTokenAddr = SEED_ADDRESS;
 
         if (localOutputTokenAddr) this.setOutputAddress(localOutputTokenAddr);
         else {
@@ -945,17 +946,19 @@ export default class SwapFormStore {
                 this.outputToken.balanceBn = balanceBn;
                 this.outputToken.balanceFormatted = userBalance;
             } else {
-                this.outputToken = {
-                    address: outputTokenAddress,
-                    symbol: 'unknown',
-                    name: 'unknown',
-                    decimals: 18,
-                    hasIcon: false,
-                    precision: 4,
-                    balanceFormatted: '0.00',
-                    balanceBn: bnum(0),
-                    allowance: undefined,
-                };
+                if (outputTokenAddress !== SEED_ADDRESS) {
+                    this.outputToken = {
+                        address: outputTokenAddress,
+                        symbol: 'unknown',
+                        name: 'unknown',
+                        decimals: 18,
+                        hasIcon: false,
+                        precision: 4,
+                        balanceFormatted: '0.00',
+                        balanceBn: bnum(0),
+                        allowance: undefined,
+                    };
+                }
             }
 
             let wethAddr = contractMetadataStore.getWethAddress();

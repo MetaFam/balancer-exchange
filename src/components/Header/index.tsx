@@ -3,6 +3,7 @@ import React from 'react';
 import { appConfig } from 'configs';
 import styled from 'styled-components';
 import Wallet from '../Wallet';
+const MetaGameLogo = require('../../assets/pngs/metagame.png');
 
 const HeaderFrame = styled.div`
     display: flex;
@@ -59,11 +60,26 @@ const Link = styled.a`
     }
 `;
 
+const CrossOver = styled.span`
+    font-family: 'Trade Winds', cursive;
+    font-size: 30px;
+    line-height: 15px;
+    margin-left: 13px;
+    margin-right: 15px;
+    color: white;
+`;
+
 const Header = () => {
     return (
         <HeaderFrame>
             <HeaderElement>
                 <Title>
+                    <img
+                        width={100}
+                        alt="MetaGame Logo"
+                        src={MetaGameLogo}
+                    ></img>
+                    <CrossOver>x</CrossOver>
                     <a href="/">
                         <img src="pebbles-pad.svg" alt="pebbles" />
                     </a>

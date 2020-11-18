@@ -1,4 +1,4 @@
-# Balancer Exchange
+# MetaGame x Balancer Exchange
 
 ## Development
 

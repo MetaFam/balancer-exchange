@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import logos from '@balancer-labs/assets/assets/index.json';
 import { isAddress } from '../utils/helpers';
+import { SEED_ADDRESS } from '../utils/constants';
 import { EtherKey } from '../stores/Token';
 import { ModalType } from '../stores/SwapForm';
 import { observer } from 'mobx-react';
@@ -58,6 +59,8 @@ export const TokenIconAddress = (address, hasIcon) => {
         return `https://raw.githubusercontent.com/balancer-labs/assets/master/assets/${address.toLowerCase()}.png`;
     if (address === 'ether') {
         return `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png`;
+    } else if (address === SEED_ADDRESS) {
+        return `https://assets.coingecko.com/coins/images/13099/small/seed_logo.png`;
     } else if (!hasIcon) {
         return './empty-token.png';
     } else {
